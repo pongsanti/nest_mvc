@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+    title= pageTitle
+    script(type='text/javascript').
+        const foo = false
+        if (foo) bar(1 + 5)
+    include ../public/head.pug
+    body
+        .container
+            .row
+                .col
+                    h1 Pug - node template engine
+                    #container.col
+                        if youAreUsingPug
+                            p You are amazing
+                        else
+                            p Get on it!
+                        p.
+                            Pug is a terse and simple templating language with a
+                            strong focus on performance and powerful features.
+                    #container.col2
+                        table.table.table-striped.table-hover.table-sm
+                            thead
+                                tr
+                                    th #
+                                    th Name
+                                tr
+                            tbody
+                                each item in numbers
+                                    tr
+                                        td= item.id
+                                        td= item.name
